@@ -1,0 +1,65 @@
+clock(H,M) :- H >= 0,
+	      H < 24,
+	      M >= 0,
+	      M < 60.
+
+add(clock(H,M),I) :- clock(mod((H+((M+I)/60)),24), mod(M+I,60)).
+
+%line99 has a westbound route
+prop(line99, route, westbound99).
+%the westbound route has stops stop0_w99 and stop1_w99
+prop(westbound99, stop, stop0_w99).
+prop(westbound99, stop, stop1_w99).
+%stop0_w99 is at boundary loop
+prop(stop0_w99, location, loughheed_highway_at_boundary_loop).
+%stop1_w99 is at rupert st
+prop(stop1_w99, location, e_broadway_at_rupert_st).
+
+%westbound route has bus0
+prop(westbound99, bus, bus0_w99).
+%bus0 has a schedule
+prop(bus0_w99, schedule, sched0_w99).
+%the schedule has an start time (i.e. the time when the bus departs from
+%the first stop)
+prop(sched0_w99, startTime, clock(05,41)).
+%the schedule has an arrival a0_sched0_w99
+prop(sched0_w99, arrival, a0_sched0_w99).
+%a0_sched0_w99 is at stop0_w99
+prop(a0_sched0_w99, location, stop0_w99).
+%the bus arrives at a0_sched0_w99 at the start time
+prop(a0_sched0_w99, time, X) :- prop(sched0_w99, startTime, Y),
+	                        add(Y,0).
+%sched0_w99 has an arrival at a1_shed0_w99
+prop(sched0_w99, arrival, a1_sched0_w99).
+%a1_sched0_w99 is at stop1_w99
+prop(a1_sched0_w99, location, stop1_w99).
+%the bus arrives at a1_sched0_w99 a minute after the start time
+prop(a1_sched0_w99, time, X) :- prop(sched0_w99, startTime, Y),
+	                        add(Y,1).
+
+
+
+
+
+
+%bus99w_1 is on line99_westbound
+prop(line99_westbound, bus, bus99w_1).
+%bus99_1 has schedule sched99_1
+prop(bus99w_1, schedule, sched99w_1).
+%sched99w_1 starts at 05:41
+prop(sched99w_1, start_time, clock(05,41)).
+%sched99w_1 has stop99w_1
+prop(sched99w_1, stop, stop99w_1).
+prop(stop99w_1, location, lougheed_highway_at_boundary_loop).
+prop(stop99_1, time, X) :- prop(sched99w_1, start_time, Y),
+			   X is add(Y,1).
+
+
+
+
+%sched99w_1 has stop stop99w_1
+prop(sched99w_1, stop, stop99w_1).
+%stop99w_1 is at location lougheed_highway_at_boundary_loop,
+%at time 05:41
+prop(stop99w_1, location, lougheed_highway_at_boundary_loop).
+prop(stop99w_1, time, 05:41).
