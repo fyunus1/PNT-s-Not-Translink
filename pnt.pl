@@ -2642,12 +2642,12 @@ prop(stop1_w16, location, loc(renfrew,broadway)).
 prop(stop2_w16, location, loc(hastings,commercial_dr)).
 prop(stop3_w16, location, loc(hastings,homer_st)).
 prop(stop4_w16, location, loc(granville_st,broadway)).
-prop(stop5_w16, location, loc(west_boulevard,41st_ave)).
+prop(stop5_w16, location, loc(w41_ave, west_boulevard)).
 prop(stop6_w16, location, loc(63_ave_loop,63_ave_loop)).
 
 %stopn_e16 is at x...
 prop(stop0_e16, location, loc(63_ave_loop,63_ave_loop)).
-prop(stop1_e16, location, loc(west_boulevard,41st_ave)).
+prop(stop1_e16, location, loc(w41_ave, west_boulevard)).
 prop(stop2_e16, location, loc(granville_st,broadway)).
 prop(stop3_e16, location, loc(hastings,homer_st)).
 prop(stop4_e16, location, loc(hastings,commercial_dr)).
