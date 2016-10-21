@@ -1060,43 +1060,43 @@ prop(a18_sched8_w99, time, N) :- prop(sched8_w99, startTime, Y), add(Y,41,N).
 
 %arrivals for sched9_w99
 prop(a0_sched9_w99, location, stop0_w99).
-prop(a0_sched9_w99, time, add(Y,0)) :- prop(sched9_w99, startTime, Y).
+prop(a0_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,0,N).
 prop(a1_sched9_w99, location, stop11_w99).
-prop(a1_sched9_w99, time, add(Y,1)) :- prop(sched9_w99, startTime, Y).
+prop(a1_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,1,N).
 prop(a2_sched9_w99, location, stop2_w99).
-prop(a2_sched9_w99, time, add(Y,2)) :- prop(sched9_w99, startTime, Y).
+prop(a2_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,2,N).
 prop(a3_sched9_w99, location, stop3_w99).
-prop(a3_sched9_w99, time, add(Y,3)) :- prop(sched9_w99, startTime, Y).
+prop(a3_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,3,N).
 prop(a4_sched9_w99, location, stop4_w99).
-prop(a4_sched9_w99, time, add(Y,4)) :- prop(sched9_w99, startTime, Y).
+prop(a4_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,4,N).
 prop(a5_sched9_w99, location, stop5_w99).
-prop(a5_sched9_w99, time, add(Y,6)) :- prop(sched9_w99, startTime, Y).
+prop(a5_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,6,N).
 prop(a6_sched9_w99, location, stop6_w99).
-prop(a6_sched9_w99, time, add(Y,7)) :- prop(sched9_w99, startTime, Y).
+prop(a6_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,7,N).
 prop(a7_sched9_w99, location, stop7_w99).
-prop(a7_sched9_w99, time, add(Y,9)) :- prop(sched9_w99, startTime, Y).
+prop(a7_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,9,N).
 prop(a8_sched9_w99, location, stop8_w99).
-prop(a8_sched9_w99, time, add(Y,10)) :- prop(sched9_w99, startTime, Y).
+prop(a8_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,10,N).
 prop(a9_sched9_w99, location, stop9_w99).
-prop(a9_sched9_w99, time, add(Y,13)) :- prop(sched9_w99, startTime, Y).
+prop(a9_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,13,N).
 prop(a10_sched9_w99, location, stop10_w99).
-prop(a10_sched9_w99, time, add(Y,14)) :- prop(sched9_w99, startTime, Y).
+prop(a10_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,14,N).
 prop(a11_sched9_w99, location, stop11_w99).
-prop(a11_sched9_w99, time, add(Y,16)) :- prop(sched9_w99, startTime, Y).
+prop(a11_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,16,N).
 prop(a12_sched9_w99, location, stop12_w99).
-prop(a12_sched9_w99, time, add(Y,19)) :- prop(sched9_w99, startTime, Y).
+prop(a12_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,19,N).
 prop(a13_sched9_w99, location, stop13_w99).
-prop(a13_sched9_w99, time, add(Y,21)) :- prop(sched9_w99, startTime, Y).
+prop(a13_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,21,N).
 prop(a14_sched9_w99, location, stop14_w99).
-prop(a14_sched9_w99, time, add(Y,24)) :- prop(sched9_w99, startTime, Y).
+prop(a14_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,24,N).
 prop(a15_sched9_w99, location, stop16_w99).
-prop(a15_sched9_w99, time, add(Y,29)) :- prop(sched9_w99, startTime, Y).
+prop(a15_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,29,N).
 prop(a16_sched9_w99, location, stop17_w99).
-prop(a16_sched9_w99, time, add(Y,34)) :- prop(sched9_w99, startTime, Y).
+prop(a16_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,34,N).
 prop(a17_sched9_w99, location, stop18_w99).
-prop(a17_sched9_w99, time, add(Y,39)) :- prop(sched9_w99, startTime, Y).
+prop(a17_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,39,N).
 prop(a18_sched9_w99, location, stop19_w99).
-prop(a18_sched9_w99, time, add(Y,41)) :- prop(sched9_w99, startTime, Y).
+prop(a18_sched9_w99, time, N) :- prop(sched9_w99, startTime, Y), add(Y,41,N).
 
 %an_sched0_e99 is at stopm_e99...
 prop(a0_sched0_e99, location, stop0_e99).
