@@ -4,7 +4,7 @@ clock(H,M) :- H >= 0,
 	      M >= 0,
 	      M < 60.
 
-add(clock(H,M),I) :- clock(mod((H+((M+I)/60)),24), mod(M+I,60)).
+add(clock(H,M),I) :- clock(mod(ceiling(H+((M+I)/60)),24), mod(M+I,60)).
 
 %line99 has westbound and eastbound routes
 prop(line99, route, westbound99).
