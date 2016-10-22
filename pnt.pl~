@@ -4027,7 +4027,7 @@ prop(a2_sched0_w99, time, N) :- prop(sched0_w99, startTime, Y),
                                 add(Y,2,N).
 prop(a3_sched0_w99, location, stop3_w99).
 prop(a3_sched0_w99, time, N) :- prop(sched0_w99, startTime, Y),
-                                add(Y,3,N)
+                                add(Y,3,N).
 prop(a4_sched0_w99, location, stop4_w99).
 prop(a4_sched0_w99, time, N) :- prop(sched0_w99, startTime, Y),
                                 add(Y,4,N).
@@ -4590,7 +4590,7 @@ prop(a10_sched3_e99, time, N) :- prop(sched3_e99, startTime, Y), add(Y,27,N).
 prop(a11_sched3_e99, location, stop11_e99).
 prop(a11_sched3_e99, time, N) :- prop(sched3_e99, startTime, Y), add(Y,30,N).
 prop(a12_sched3_e99, location, stop12_e99).
-prop(a12_sched3_e99, time, N) :- prop(sched3_e99, startTime, Y)., add(Y,32,N)
+prop(a12_sched3_e99, time, N) :- prop(sched3_e99, startTime, Y), add(Y,32,N).
 prop(a13_sched3_e99, location, stop13_e99).
 prop(a13_sched3_e99, time, N) :- prop(sched3_e99, startTime, Y), add(Y,33,N).
 

@@ -9,6 +9,9 @@ add(Y,I,N) :- Y = clock(H,M),
 	      NH is mod(H+floor((M+I)/60),24),
 	      NM is mod(M+I,60).
 
+prop(X,vehicle,Y) :- prop(X,bus,Y).
+prop(X,bus,Y) :- prop(X,skytrain,Y).
+
 % line41 has westbound and eastbound routes.
 prop(line41, route, westbound41).
 prop(line41, route, eastbound41).
