@@ -48,9 +48,9 @@ prop(stop5_ncl, location, loc(no_3_rd, aberdeen)).
 prop(stop6_ncl, location, loc(no_3_rd, bridgeport)).
 prop(stop7_ncl, location, loc(cambie_st, marine_drive)).
 prop(stop8_ncl, location, loc(cambie_st, langara)).
-prop(stop9_ncl, location, loc(cambie_st, oakridge)).
+prop(stop9_ncl, location, loc(w41_ave, cambie_st)).
 prop(stop10_ncl, location, loc(cambie_st, king_edward)).
-prop(stop11_ncl, location, loc(cambie_st, broadway_city_hall)).
+prop(stop11_ncl, location, loc(w_broadway,cambie_st)).
 prop(stop12_ncl, location, loc(cambie_st, olympic_village)).
 prop(stop13_ncl, location, loc(yaletown, roundhouse)).
 prop(stop14_ncl, location, loc(downtown, vancouver_city_centre)).
@@ -61,9 +61,9 @@ prop(stop0_scl, location, loc(downtown, waterfront)).
 prop(stop1_scl, location, loc(downtown, vancouver_city_centre)).
 prop(stop2_scl, location, loc(yaletown, roundhouse)).
 prop(stop3_scl, location, loc(cambie_st, olympic_village)).
-prop(stop4_scl, location, loc(cambie_st, broadway_city_hall)).
+prop(stop4_scl, location, loc(w_broadway,cambie_st)).
 prop(stop5_scl, location, loc(cambie_st, king_edward)).
-prop(stop6_scl, location, loc(cambie_st, oakridge)).
+prop(stop6_scl, location, loc(w41_ave, cambie_st)).
 prop(stop7_scl, location, loc(cambie_st, langara)).
 prop(stop8_scl, location, loc(cambie_st, marine_drive)).
 prop(stop9_scl, location, loc(no_3_rd, bridgeport)).
