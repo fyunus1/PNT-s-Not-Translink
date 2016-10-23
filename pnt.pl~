@@ -19,9 +19,12 @@ prop(X,bus,Y) :- prop(X,skytrain,Y).
 %find routes from location Start to location Dest
 %departing at or after time StartTime
 %and arriving at destination within MaxTime minutes
-findRoutes(Start,Dest,StartTime,MaxTime,Route, S) :-
-%check if there’s a line with a route with stops at Start and Dest
+%(Single-hop; no transfers)
+findRoutes(Start,Dest,StartTime,MaxTime,Route,S,D,JourneyMinutes) :-
+%Set S to Start, D to Dest; these are just to format the returned info
 S = Start,
+D = Dest,
+%check if there’s a line with a route with stops at Start and Dest
 prop(_, route, Route),
 prop(Route, stop, StopOfStart),
 prop(StopOfStart,location, Start),
@@ -40,7 +43,45 @@ prop(Schedule, arrival, ArrivalAtDest),
 prop(ArrivalAtDest, location, StopOfDest),
 prop(ArrivalAtDest, time, TimeOfStopOfDest),
 add(StartTime,JourneyMinutes,TimeOfStopOfDest),
-JourneyMinutes > StartTimeDiff,
+JourneyMinutes >= StartTimeDiff,
+JourneyMinutes =< MaxTime.
+
+%find routes from location Start to location Dest
+%departing at or after time StartTime
+%and arriving at destination within MaxTime minutes
+%(with transfers)
+findRoutes(Start,Dest,StartTime,MaxTime,Route,S,D,JourneyMinutes) :-
+%Set S to Start, D to Dest; these are just to format the returned info
+S = Start,
+D = Dest,
+%check if there's a line with a route with stops at Start and Via,
+%(where there exists a series of routes from Via to Dest)
+prop(_, route, Route),
+prop(Route, stop, StopOfStart),
+prop(Route, stop, StopOfVia),
+dif(StopOfStart,StopOfVia),
+prop(StopOfStart,location, Start),
+prop(StopOfVia, location, Via),
+dif(Start,Via),
+%check if soonest bus at Start after StartTime
+%gets to Via, and soones bus at Via after arrival
+%get to Dest within MaxTime
+prop(Route,vehicle,Vehicle),
+prop(Vehicle, schedule, Schedule),
+prop(Schedule, arrival, ArrivalOfStart),
+prop(ArrivalOfStart, location, StopOfStart),
+prop(ArrivalOfStart, time, TimeOfStopOfStart),
+add(StartTime,StartTimeDiff,TimeOfStopOfStart),
+StartTimeDiff >= 0,
+prop(Schedule, arrival, ArrivalAtVia),
+prop(ArrivalAtVia, location, StopOfVia),
+prop(ArrivalAtVia, time, TimeOfStopOfVia),
+add(StartTime,FirstHopMinutes,TimeOfStopOfVia),
+FirstHopMinutes >= StartTimeDiff,
+TimeLeft is MaxTime-FirstHopMinutes,
+TimeLeft >= 0,
+findRoutes(Via,Dest,TimeOfStopOfVia,TimeLeft,_,_,_,SecondHopMinutes),
+JourneyMinutes is FirstHopMinutes + SecondHopMinutes,
 JourneyMinutes =< MaxTime.
 
 % line41 has westbound and eastbound routes.
