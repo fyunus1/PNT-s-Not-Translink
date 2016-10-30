@@ -1,5 +1,5 @@
-#� �P�N�T�-�s�-�N�o�t�-�T�r�a�n�s�l�i�n�k�
-�
+# PNT-s-Not-Translink
+
 #### Here is the link to the wiki for our project:
 
 http://wiki.ubc.ca/Course:CPSC312-2016-Project1-PNT
